@@ -1,0 +1,31 @@
+app-header {
+  a {
+    text-decoration: none;
+    &.active {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+  }
+
+  .mat-toolbar {
+    position: relative;
+    .links {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  mat-menu {
+    .active {
+      pointer-events: none;
+      background-color: cornflowerblue;
+      color: white;
+    }
+  }
+}

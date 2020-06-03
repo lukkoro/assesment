@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="text-left">
+    <div class="d-flex mt-4">
+      <div class="flex-grow-1">
+        <mat-form-field class="search-input w-100">
+          <mat-label>Search</mat-label>
+          <input matInput (keyup.enter)="search()" [(ngModel)]="query">
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button class="ml-4" (click)="search()" [disabled]="!query.length" color="primary">Search</button>
+      </div>
+    </div>
+    <mat-radio-group aria-label="Search with" [(ngModel)]="searchEngine">
+      <mat-radio-button class="mr-3" [value]="engine" *ngFor="let engine of searchEngines">{{engine | titlecase}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="mt-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>

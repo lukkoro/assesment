@@ -1,0 +1,49 @@
+<div class="poke-details">
+  <mat-card class="mt-4">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img [alt]="pokemon.name" [src]="pokemon.picture" class="poke-picture">
+      </div>
+      <div class="col-md-8">
+        <div class="mt-4">
+          <h1 class="text-body mt-3">{{pokemon.name}}</h1>
+          <div class="pl-2">
+            <h3>Abilities</h3>
+            <ul>
+              <li *ngFor="let ability of pokemon.abilities" class="text-success">
+                {{ability.ability.name}} <br>
+                <span class="text-black-50">{{ability.ability.description}}</span>
+              </li>
+            </ul>
+
+            <h3>Types</h3>
+            <ul>
+              <li *ngFor="let type of pokemon.types" class="text-primary">
+                {{type.type.name}}
+              </li>
+            </ul>
+
+            <h3>Stats</h3>
+            <ul>
+              <li *ngFor="let stat of pokemon.stats">
+                {{stat.stat.name}} <br>
+                <span class="text-muted">
+                Base stat:
+              </span>
+                <span [ngClass]="{'text-danger': stat.base_stat < 40,
+                                'text-warning': stat.base_stat >= 40 && stat.base_stat < 60,
+                                'text-success': stat.base_stat >= 60}">
+              {{stat.base_stat}}</span>
+                <br>
+                <span class="text-muted">
+                Effort:
+              </span>
+                <span>{{stat.effort}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

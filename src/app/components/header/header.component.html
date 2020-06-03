@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="d-flex">
+  <div class="flex-grow-1">
+    <a routerLink="/" class="text-white">Assesment</a>
+
+    <div class="links d-none d-md-block">
+      <a routerLink="/" class="text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/pokedex" class="text-white ml-4" routerLinkActive="active">Pokedex</a>
+      <a routerLink="/search" class="text-white ml-4" routerLinkActive="active">Search</a>
+    </div>
+
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="appMenu" class="d-block d-md-none">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </button>
+  <mat-menu #appMenu="matMenu">
+    <a routerLink="/" routerLinkActive="active" mat-menu-item>Home</a>
+    <a routerLink="/pokedex" routerLinkActive="active" mat-menu-item>Pokedex</a>
+    <a routerLink="/search" routerLinkActive="active" mat-menu-item>Search</a>
+  </mat-menu>
+</mat-toolbar>
